@@ -1,0 +1,82 @@
+### Angular  ###
+# Gitignore template for Angular projects
+# Ignore content collection generated files
+.angular
+**/.angular/
+
+# Misc
+.sass-cache/
+**/.sass-cache/
+connect.lock/
+**/connect.lock/
+coverage/
+**/coverage/
+libpeerconnection.log/
+**/libpeerconnection.log/
+npm-debug.log
+**/npm-debug.log
+testem.log
+**/testem.log
+typings/
+**/typings/
+
+# e2e
+e2e/*.js
+**/e2e/*.js
+e2e/*.map
+**/e2e/*.map
+
+### VisualStudioCode ###
+.vscode/*
+**/.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# Jetbrains setting folder
+.idea/
+**/.idea/
+
+# Dependencies
+node_modules/
+**/node_modules/
+bower_components/
+**/bower_components/
+
+# Logs
+logs/
+*.log
+
+# Files system
+.DS_Store
+**/.DS_Store
+Thumbs.db
+**/Thumbs.db
+
+# Environment variables
+**/.env
+**/.env.production
+
+# Build output
+dist/
+**/dist/
+tmp/
+**/tmp/
+app/**/*.js
+**/app/**/*.js
+app/**/*.js.map
+**/app/**/*.js.map
+
