@@ -7,13 +7,12 @@
             <button class="button is-medium" (click)="toggleTheme()">
               <span class="icon">
                 <span
-                  class="mdi mdi-weather-night mdi-36px has-text-link"
-                ></span>
-              </span>
-
-              <span class="icon">
-                <span
-                  class="mdi mdi-weather-sunny mdi-36px has-text-warning"
+                  [ngClass]="
+                    isDarkMode
+                      ? 'mdi-weather-night has-text-link'
+                      : 'mdi-weather-sunny has-text-warning'
+                  "
+                  class="mdi mdi-36px"
                 ></span>
               </span>
             </button>
