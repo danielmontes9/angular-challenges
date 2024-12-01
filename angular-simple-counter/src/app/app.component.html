@@ -1,7 +1,35 @@
-<main>
-  <h1>Angular Simple Counter</h1>
-  <p>{{ counter }}</p>
-  <button (click)="increase()">INCREASE</button>
-  <button (click)="decrease()">DECREASE</button>
-  <button (click)="reset()">RESET</button>
+<main
+  class="hero is-link is-fullheight-with-navbar columns is-justify-content-center is-align-items-center has-text-centered"
+>
+  <div class="colum is-full">
+    <h1 class="title is-1 mb-5">Angular Simple Counter</h1>
+    <p class="subtitle is-1">{{ counter }}</p>
+
+    <div class="is-justify-content-center">
+      <button
+        class="button is-primary is-rounded is-large is-responsive"
+        (click)="increase()"
+      >
+        <span class="icon is-medium">
+          <i class="fab fa-github"></i>
+        </span>
+        <span>INCREASE</span>
+      </button>
+      <button
+        class="button is-rounded is-large is-responsive mx-3"
+        (click)="reset()"
+      >
+        RESET
+      </button>
+      <button
+        class="button is-danger is-rounded is-large is-responsive"
+        (click)="decrease()"
+      >
+        <span>DECREASE</span>
+        <span class="icon is-medium">
+          <i class="fab fa-github"></i>
+        </span>
+      </button>
+    </div>
+  </div>
 </main>
