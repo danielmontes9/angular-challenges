@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LocalstorageService } from './localstorage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class ThemeService {
   private currentTheme: string = 'dark';
 
-  constructor() {}
+  constructor(private localStorageService: LocalstorageService) {}
 
   toggleTheme(): void {
     this.currentTheme === 'dark'

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LocalstorageService } from '../../shared/services/localstorage.service';
 
 @Component({
   selector: 'app-simple-counter',
@@ -13,19 +14,26 @@ export class SimpleCounterComponent {
   isAnimatingReset = false;
   isAnimatingDecrease = false;
 
+  constructor(private localStorageService: LocalstorageService) {
+    this.counter = this.localStorageService.getCounter();
+  }
+
   increase() {
     this.counter++;
     this.triggerAnimationIncrease();
+    this.localStorageService.setCounter(this.counter);
   }
 
   reset() {
     this.counter = 0;
     this.triggerAnimationReset();
+    this.localStorageService.setCounter(this.counter);
   }
 
   decrease() {
     this.counter--;
     this.triggerAnimationDecrease();
+    this.localStorageService.setCounter(this.counter);
   }
 
   triggerAnimationIncrease() {
