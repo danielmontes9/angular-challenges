@@ -3,6 +3,10 @@
   margin-bottom: 1.5rem;
 }
 
+.no-select {
+  user-select: none;
+}
+
 // ANIMATION
 .heartbeat {
 	-webkit-animation: heartbeat 1.5s ease-in-out both;
