@@ -10,22 +10,15 @@ import { LocalstorageService } from '../../services/localstorage.service';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  isDarkMode = true;
+  isDarkMode: boolean = true;
 
-  constructor(
-    public themeService: ThemeService,
-    private localStorageService: LocalstorageService
-  ) {
-    if (this.localStorageService.getThemeMode() == null) {
-      this.localStorageService.setThemeMode('dark');
-    } else {
-      this.isDarkMode = this.localStorageService.getThemeMode() === 'dark';
-    }
+  constructor(public themeService: ThemeService) {
+    this.isDarkMode =
+      this.themeService.getCurrentTheme() == 'dark' ? true : false;
   }
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
     this.isDarkMode = this.themeService.getCurrentTheme() === 'dark';
-    this.localStorageService.setThemeMode(this.isDarkMode ? 'dark' : 'light');
   }
 }
