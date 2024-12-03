@@ -14,36 +14,48 @@ export class SimpleCounterComponent {
   isAnimatingReset = false;
   isAnimatingDecrease = false;
 
+  activeReset: boolean = false;
+
+  intervalId: ReturnType<typeof setInterval> | null = null;
+
   constructor(private localStorageService: LocalstorageService) {
     this.counter = this.localStorageService.getCounter();
   }
 
-  increase() {
+  increase(): void {
     this.counter++;
-    this.triggerAnimationIncrease();
+    if (this.activeReset === false) {
+      this.triggerAnimationIncrease();
+    }
     this.localStorageService.setCounter(this.counter);
   }
 
-  reset() {
-    this.counter = 0;
+  reset(): void {
+    if (this.counter === 0) {
+      return;
+    }
+
+    this.counter > 0 ? this.startCountdown() : this.startCountup();
     this.triggerAnimationReset();
     this.localStorageService.setCounter(this.counter);
   }
 
-  decrease() {
+  decrease(): void {
     this.counter--;
-    this.triggerAnimationDecrease();
+    if (this.activeReset === false) {
+      this.triggerAnimationDecrease();
+    }
     this.localStorageService.setCounter(this.counter);
   }
 
-  triggerAnimationIncrease() {
+  triggerAnimationIncrease(): void {
     this.isAnimatingIncrease = true;
     setTimeout(() => {
       this.isAnimatingIncrease = false;
     }, 100);
   }
 
-  triggerAnimationReset() {
+  triggerAnimationReset(): void {
     this.isAnimatingReset = true;
     setTimeout(() => {
       this.isAnimatingReset = false;
@@ -55,5 +67,45 @@ export class SimpleCounterComponent {
     setTimeout(() => {
       this.isAnimatingDecrease = false;
     }, 100);
+  }
+
+  startCountdown(): void {
+    this.stopCountdown();
+    this.activeReset = true;
+    this.intervalId = setInterval(() => {
+      if (this.counter > 0) {
+        this.decrease();
+      } else {
+        this.stopCountdown();
+      }
+    }, 35);
+  }
+
+  stopCountdown(): void {
+    if (this.intervalId) {
+      this.activeReset = false;
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+  }
+
+  startCountup(): void {
+    this.stopCountup();
+    this.activeReset = true;
+    this.intervalId = setInterval(() => {
+      if (this.counter < 0) {
+        this.increase();
+      } else {
+        this.stopCountup();
+      }
+    }, 35);
+  }
+
+  stopCountup(): void {
+    if (this.intervalId) {
+      this.activeReset = false;
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
   }
 }
