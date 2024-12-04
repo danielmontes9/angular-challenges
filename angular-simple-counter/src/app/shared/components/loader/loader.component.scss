@@ -1,5 +1,7 @@
 @import 'bulma/sass/utilities/initial-variables.scss';
 
+
+
 .loader-container {
   position: absolute;
   z-index: 999;
@@ -12,7 +14,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transition: all 0.5 ease-in-out;
+  opacity: 1;
+  animation: fade 3s linear;
 }
 
 .loader {
@@ -32,5 +35,14 @@
   }
   100% {
       transform: rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0
+  }
+  50% {
+    opacity: 1
   }
 }
