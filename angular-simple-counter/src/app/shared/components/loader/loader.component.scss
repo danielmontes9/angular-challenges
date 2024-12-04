@@ -1,0 +1,36 @@
+@import 'bulma/sass/utilities/initial-variables.scss';
+
+.loader-container {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $black-bis;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: all 0.5 ease-in-out;
+}
+
+.loader {
+  width: 144px;
+  height: 144px;
+  border: 15px solid $white;
+  border-bottom-color: $turquoise;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
