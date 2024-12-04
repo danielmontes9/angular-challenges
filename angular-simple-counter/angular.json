@@ -33,6 +33,16 @@
               "node_modules/@mdi/font/css/materialdesignicons.min.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "sass": {
+                "silenceDeprecations": [
+                  "mixed-decls",
+                  "color-functions",
+                  "global-builtin",
+                  "import"
+                ]
+              }
+            },
             "scripts": []
           },
           "configurations": {
