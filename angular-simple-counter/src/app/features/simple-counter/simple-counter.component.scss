@@ -1,6 +1,21 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../../../../public/assets/fonts/DigitalPlay.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import 'bulma/sass/utilities/initial-variables.scss';
+
+$family-primary: 'MyCustomFont', sans-serif;
+
+.custom-font {
+  font-family: 'MyCustomFont', sans-serif;
+}
+
 .counter-text {
+  font-family: $family-primary;
   font-size: 15rem;
-  margin-bottom: 1.5rem;
 }
 
 // ANIMATION
