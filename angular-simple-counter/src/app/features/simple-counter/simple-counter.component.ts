@@ -23,7 +23,11 @@ export class SimpleCounterComponent {
   }
 
   increase(): void {
-    this.counter++;
+    if (this.counter < 99) {
+      this.counter++;
+      return;
+    }
+
     if (this.activeReset === false) {
       this.triggerAnimationIncrease();
     }
@@ -41,7 +45,11 @@ export class SimpleCounterComponent {
   }
 
   decrease(): void {
-    this.counter--;
+    if (this.counter > -99) {
+      this.counter--;
+      return;
+    }
+
     if (this.activeReset === false) {
       this.triggerAnimationDecrease();
     }

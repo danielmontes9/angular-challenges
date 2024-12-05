@@ -7,37 +7,59 @@
     </h1>
     <p class="counter-text no-select">{{ counter }}</p>
 
-    <div class="is-justify-content-center">
-      <button
-        [disabled]="activeReset"
-        [ngClass]="{ heartbeat: isAnimatingIncrease }"
-        class="button is-primary is-rounded is-large is-responsive"
-        (click)="increase()"
-      >
-        <span class="icon">
-          <span class="mdi mdi-plus-circle-outline mdi-36px"></span>
-        </span>
+    <div class="columns">
+      <div class="column container-increase">
+        <div
+          *ngIf="counter >= 99"
+          [ngClass]="{ heartbeat: isAnimatingIncrease }"
+          class="cartoon-increase"
+        >
+          <span class="cartoon-text no-select">🤨</span>
+        </div>
+        <button
+          [disabled]="activeReset"
+          [ngClass]="{ heartbeat: isAnimatingIncrease }"
+          class="button is-primary is-rounded is-large is-responsive"
+          (click)="increase()"
+        >
+          <span class="icon">
+            <span class="mdi mdi-plus-circle-outline mdi-36px"></span>
+          </span>
 
-        <span>INCREASE</span>
-      </button>
-      <button
-        [ngClass]="{ heartbeat: isAnimatingReset }"
-        class="button is-rounded is-large is-responsive mx-3"
-        (click)="reset()"
-      >
-        RESET
-      </button>
-      <button
-        [disabled]="activeReset"
-        [ngClass]="{ heartbeat: isAnimatingDecrease }"
-        class="button is-danger is-rounded is-large is-responsive"
-        (click)="decrease()"
-      >
-        <span>DECREASE</span>
-        <span class="icon">
-          <span class="mdi mdi-minus-circle-outline mdi-36px"></span>
-        </span>
-      </button>
+          <span>INCREASE</span>
+        </button>
+      </div>
+
+      <div class="column">
+        <button
+          [ngClass]="{ heartbeat: isAnimatingReset }"
+          class="button is-rounded is-large is-responsive mx-3"
+          (click)="reset()"
+        >
+          RESET
+        </button>
+      </div>
+
+      <div class="column container-decrease">
+        <div
+          *ngIf="counter <= -99"
+          [ngClass]="{ heartbeat: isAnimatingDecrease }"
+          class="cartoon-decrease"
+        >
+          <span class="cartoon-text no-select">🤨</span>
+        </div>
+        <button
+          [disabled]="activeReset"
+          [ngClass]="{ heartbeat: isAnimatingDecrease }"
+          class="button is-danger is-rounded is-large is-responsive"
+          (click)="decrease()"
+        >
+          <span>DECREASE</span>
+          <span class="icon">
+            <span class="mdi mdi-minus-circle-outline mdi-36px"></span>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </main>

@@ -105,3 +105,62 @@ $family-primary: 'MyCustomFont', sans-serif;
   }
 }
 
+
+
+.container-increase {
+  position: relative;
+}
+
+.cartoon-increase {
+  position: absolute;
+  left: -50px;
+  top: -125%;
+  height: 100px;
+  width: 150px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.1);
+  font-size: 4rem;
+  transition: all 0.5s ease-in-out;
+}
+.cartoon-increase:before {
+  border: 25px solid white;
+  content: '';
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  bottom: -35px;
+  right: 9px;
+  transform: rotate(-25deg);
+}
+
+
+.container-decrease {
+  position: relative;
+}
+
+.cartoon-decrease {
+  position: absolute;
+  left: 135px;
+  top: -125%;
+  height: 100px;
+  width: 150px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.1);
+  font-size: 4rem;
+  transition: all 0.5s ease-in-out;
+}
+.cartoon-decrease:before {
+  border: 25px solid white;
+  content: '';
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  bottom: -35px;
+  right: 95px;
+  transform: rotate(25deg);
+}
+
