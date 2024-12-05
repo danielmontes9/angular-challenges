@@ -25,7 +25,6 @@ export class SimpleCounterComponent {
   increase(): void {
     if (this.counter < 99) {
       this.counter++;
-      return;
     }
 
     if (this.activeReset === false) {
@@ -47,7 +46,6 @@ export class SimpleCounterComponent {
   decrease(): void {
     if (this.counter > -99) {
       this.counter--;
-      return;
     }
 
     if (this.activeReset === false) {
