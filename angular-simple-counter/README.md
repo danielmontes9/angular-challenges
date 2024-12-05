@@ -1,4 +1,40 @@
-# AngularSimpleCounter
+# Angular Simple Counter
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Angular Documentation](#angular-documentation)
+  - [Development server](#development-server)
+  - [Code scaffolding](#code-scaffolding)
+  - [Building](#building)
+  - [Running unit tests](#running-unit-tests)
+  - [Running end-to-end tests](#running-end-to-end-tests)
+  - [Additional Resources](#additional-resources)
+
+## Overview
+
+### Screenshot
+
+![](./public/overview.png)
+
+### Links
+
+- Live Site URL: [Angular Simple Counter](https://your-live-site-url.com)
+
+## My process
+
+### Built with
+
+- Bulma 1.0.2
+- Mobile-first workflow
+- [Angular](https://v19.angular.dev/)
+
+## Angular Documentation
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 
