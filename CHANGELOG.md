@@ -1,0 +1,10 @@
+## (2024-12-14)
+
+- ci: :heavy_plus_sign: adding conventional-changelog ([16591aa](https://github.com/danielmontes9/coderbyte-angular-challenges/commit/16591aa))
+- ci: :heavy_plus_sign: adding husky lint-staged prettier commitlint ([3d840fc](https://github.com/danielmontes9/coderbyte-angular-challenges/commit/3d840fc))
+- ci: :heavy_plus_sign: adding prettier-plugin-organize-atributes ([363a73f](https://github.com/danielmontes9/coderbyte-angular-challenges/commit/363a73f))
+- chore: :tada: first commit ([1b76cd9](https://github.com/danielmontes9/coderbyte-angular-challenges/commit/1b76cd9))
+- chore: :wrench: adding config to commit-lint ([47b339e](https://github.com/danielmontes9/coderbyte-angular-challenges/commit/47b339e))
+- chore: :wrench: adding config to lint-staged ([1a6d855](https://github.com/danielmontes9/coderbyte-angular-challenges/commit/1a6d855))
+- chore: :wrench: adding config to prettier ([65db75c](https://github.com/danielmontes9/coderbyte-angular-challenges/commit/65db75c))
+- docs: :see_no_evil: gitignore created ([8890f79](https://github.com/danielmontes9/coderbyte-angular-challenges/commit/8890f79))
