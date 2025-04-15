@@ -3,7 +3,11 @@
 >
   <div class="colum is-full">
     <h1 class="title is-1 mb-0 has-text-inherit no-select">
-      Angular Simple Counter
+      Angular
+      <br class="is-hidden-tablet">
+      Simple
+      <br class="is-hidden-tablet">
+      Counter
     </h1>
     <p class="counter-text no-select">{{ counter }}</p>
 
@@ -19,7 +23,7 @@
         <button
           [disabled]="activeReset"
           [ngClass]="{ heartbeat: isAnimatingIncrease }"
-          class="button is-primary is-rounded is-large is-responsive"
+          class="button is-primary is-rounded is-large"
           (click)="increase()"
         >
           <span class="icon">
@@ -33,7 +37,7 @@
       <div class="column">
         <button
           [ngClass]="{ heartbeat: isAnimatingReset }"
-          class="button is-rounded is-large is-responsive mx-3"
+          class="button is-rounded is-large mx-3"
           (click)="reset()"
         >
           RESET
@@ -51,7 +55,7 @@
         <button
           [disabled]="activeReset"
           [ngClass]="{ heartbeat: isAnimatingDecrease }"
-          class="button is-danger is-rounded is-large is-responsive"
+          class="button is-danger is-rounded is-large"
           (click)="decrease()"
         >
           <span>DECREASE</span>

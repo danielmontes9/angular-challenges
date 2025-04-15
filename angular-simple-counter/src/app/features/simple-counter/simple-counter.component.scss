@@ -15,7 +15,6 @@ $family-primary: 'MyCustomFont', sans-serif;
 
 .counter-text {
   font-family: $family-primary;
-  font-size: 15rem;
 }
 
 // ANIMATION
@@ -162,5 +161,18 @@ $family-primary: 'MyCustomFont', sans-serif;
   bottom: -35px;
   right: 95px;
   transform: rotate(25deg);
+}
+
+
+@media (max-width: 768px) {
+  .counter-text {
+    font-size: 10rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .counter-text {
+    font-size: 15rem;
+  }
 }
 
