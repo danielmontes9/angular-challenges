@@ -7,8 +7,3 @@
 );
 
 @use "@carbon/styles";
-
-// Import css variables in root
-html {
-	@include styles.theme(styles.$white);
-}

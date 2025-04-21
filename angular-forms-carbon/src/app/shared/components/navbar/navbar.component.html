@@ -1,7 +1,6 @@
-<ibm-header name="Carbon Tutorial Angular">
-  <ibm-header-action title="action">
-    <svg ibmIcon="switcher" size="20"></svg>
-  </ibm-header-action>
+<ibm-header name="Carbon Tutorial Angular" [cdsTheme]="currentTheme">
+  <cds-hamburger></cds-hamburger>
+
   <ibm-header-navigation ariaLabel="Carbon Tutorial Angular">
     <ibm-header-item href="/repos">Repositories</ibm-header-item>
   </ibm-header-navigation>
@@ -13,9 +12,9 @@
     <ibm-header-action title="action">
       <svg ibmIcon="user--avatar" size="20"></svg>
     </ibm-header-action>
-    <ibm-header-action title="action" (selected)="activeDarkMode($event)">
-      <svg *ngIf="currentTheme ==  'light'" ibmIcon="awake" size="20"></svg>
-      <svg *ngIf="currentTheme ==  'dark'" ibmIcon="asleep" size="20"></svg>
+    <ibm-header-action title="action" (selected)="toggleTheme($event)">
+      <svg *ngIf="currentTheme ==  'white'" ibmIcon="awake" size="20"></svg>
+      <svg *ngIf="currentTheme ==  'g100'" ibmIcon="asleep" size="20"></svg>
     </ibm-header-action>
     <ibm-header-action title="action">
       <svg ibmIcon="help" size="20"></svg>
