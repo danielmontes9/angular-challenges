@@ -7,6 +7,7 @@ import Switcher20 from "@carbon/icons/es/switcher/20";
 import Awake20 from "@carbon/icons/es/awake/20";
 import Asleep20 from "@carbon/icons/es/asleep/20";
 import Help20 from "@carbon/icons/es/help/20";
+import { LocalstorageService } from "../../../carbon/core/services/localstorage.service";
 
 @Component({
 	selector: "app-navbar",
@@ -20,7 +21,14 @@ export class NavbarComponent {
 	constructor(
 		private themeService: ThemeService,
 		protected iconService: IconService,
-	) {}
+		private _localStorageService: LocalstorageService,
+	) {
+		this.currentTheme = this._localStorageService.getTheme("theme") as
+			| "white"
+			| "g10"
+			| "g90"
+			| "g100";
+	}
 
 	ngOnInit(): void {
 		this.iconService.registerAll([
