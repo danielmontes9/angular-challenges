@@ -1,0 +1,41 @@
+.card__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card__header__options {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.card__title {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.card__amount {
+	font-size: 3rem;
+}
+
+.card__text {
+	font-size: 1.5rem;
+}
+
+.card__text__small {
+	display: flex;
+	align-items: center;
+}
+
+.fill-warning {
+	fill: #d6b600;
+}
+
+.fill-success {
+	fill: #00a300;
+}
+
+.fill-danger {
+	fill: #d60000;
+}
