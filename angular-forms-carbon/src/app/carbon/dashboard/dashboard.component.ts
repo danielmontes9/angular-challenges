@@ -1,4 +1,8 @@
 import { Component } from "@angular/core";
+import { IconService } from "carbon-components-angular";
+
+import Settings16 from "@carbon/icons/es/settings/16";
+import DocumentDownload16 from "@carbon/icons/es/document--download/16";
 
 @Component({
 	selector: "app-dashboard",
@@ -46,5 +50,9 @@ export class DashboardComponent {
 		},
 	];
 
-	constructor() {}
+	constructor(protected iconService: IconService) {}
+
+	ngOnInit(): void {
+		this.iconService.registerAll([Settings16, DocumentDownload16]);
+	}
 }

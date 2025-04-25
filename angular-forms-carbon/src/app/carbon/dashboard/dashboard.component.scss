@@ -1,3 +1,24 @@
+.header-container {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	gap: 2rem;
+}
+
+.header__settings {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.5rem;
+}
+
+.title {
+	font-weight: 700;
+}
+
+.subtitle {
+	color: #6f6f6f;
+}
+
 .grid-container {
 	display: grid;
 	grid-auto-columns: 1fr;
@@ -11,6 +32,13 @@
 @media screen and (min-width: 768px) {
 	.grid-container {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.header-container {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: end;
+		padding: 2rem;
 	}
 }
 

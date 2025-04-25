@@ -1,3 +1,32 @@
+<div class="header-container">
+  <div class="header-content">
+    <cds-breadcrumb>
+      <cds-breadcrumb-item href="/">
+          Home
+      </cds-breadcrumb-item>
+    </cds-breadcrumb>
+
+    <h1 class="title">Dashboard</h1>
+    <small class="subtitle">Welcome to the Dashboard</small>
+  </div>
+
+  <div class="header__settings">
+    <cds-select>
+      <option value="option1">Last week</option>
+      <option value="option2">Last month</option>
+      <option value="option3">Last year</option>
+    </cds-select>
+    <div class="header__settings__buttons">
+      <cds-icon-button [kind]="'ghost'">
+        <svg ibmIcon="document--download" size="16"></svg>
+      </cds-icon-button>
+      <cds-icon-button [kind]="'ghost'">
+        <svg ibmIcon="settings" size="16"></svg>
+      </cds-icon-button>
+    </div>
+  </div>
+</div>
+
 <div class="grid-container">
   <div class="grid-item" *ngFor="let card of cards">
     <app-card
