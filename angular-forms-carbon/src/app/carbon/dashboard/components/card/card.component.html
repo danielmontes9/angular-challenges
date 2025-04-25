@@ -1,10 +1,13 @@
 <ibm-tile>
   <div class="card__header">
-    <h3 class="card__title">Card Title</h3>
+    <div class="card__header__text">
+      <h3 class="card__title">{{ title }}</h3>
+      <span class="card__subtitle">{{ subtitle }}</span>
+    </div>
 
     <div class="card__header__options">
-      <svg ibmIcon="warning--alt--filled" size="24" class="fill-warning"></svg>
-      <svg ibmIcon="checkmark--filled" size="24" class="fill-success"></svg>
+      <svg *ngIf="iconStatus == 'warning'" ibmIcon="warning--alt--filled" size="24" class="fill-warning"></svg>
+      <svg *ngIf="iconStatus == 'success'" ibmIcon="checkmark--filled" size="24" class="fill-success"></svg>
 
       <cds-overflow-menu [align]="'top'" [flip]="true">
         <cds-overflow-menu-option>Option 1</cds-overflow-menu-option>
@@ -14,12 +17,12 @@
   </div>
   <br>
   <p>
-    <span class="card__amount">24</span>
-    <span class="card__text">items</span>
+    <span class="card__amount">{{ amount | number }}</span>
+    <span class="card__text">{{ shortDescription }}</span>
   </p>
   <p class="card__text__small">
-    <small>22%</small>
-    <svg ibmIcon="caret--down" size="20" class="fill-danger"></svg>
-    <svg ibmIcon="caret--up" size="20" class="fill-success"></svg>
+    <small>{{ amountAditional }}</small>
+    <svg *ngIf="iconAmount == 'down'" ibmIcon="caret--down" size="20" class="fill-danger"></svg>
+    <svg *ngIf="iconAmount == 'up'" ibmIcon="caret--up" size="20" class="fill-success"></svg>
   </p>
 </ibm-tile>

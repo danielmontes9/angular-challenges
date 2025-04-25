@@ -1,13 +1,14 @@
 import { Component } from "@angular/core";
 import { IconService } from "carbon-components-angular";
 import { ThemeService } from "../../../carbon/core/services/theme.service";
+import { LocalstorageService } from "../../../carbon/core/services/localstorage.service";
 
 import UserAvatar20 from "@carbon/icons/es/user--avatar/20";
+import Notification20 from "@carbon/icons/es/notification/20";
 import Switcher20 from "@carbon/icons/es/switcher/20";
 import Awake20 from "@carbon/icons/es/awake/20";
 import Asleep20 from "@carbon/icons/es/asleep/20";
 import Help20 from "@carbon/icons/es/help/20";
-import { LocalstorageService } from "../../../carbon/core/services/localstorage.service";
 
 @Component({
 	selector: "app-navbar",
@@ -33,6 +34,7 @@ export class NavbarComponent {
 	ngOnInit(): void {
 		this.iconService.registerAll([
 			UserAvatar20,
+			Notification20,
 			Switcher20,
 			Awake20,
 			Asleep20,

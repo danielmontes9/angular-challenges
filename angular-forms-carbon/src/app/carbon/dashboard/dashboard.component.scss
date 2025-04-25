@@ -1,0 +1,21 @@
+.grid-container {
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-template-columns: 1fr;
+}
+
+.grid-item {
+	margin: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+	.grid-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.grid-container {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}

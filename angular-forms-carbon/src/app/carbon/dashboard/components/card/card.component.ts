@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { IconService } from "carbon-components-angular";
 
 import CaretDown20 from "@carbon/icons/es/caret--down/20";
@@ -14,6 +14,14 @@ import CheckmarkFilled24 from "@carbon/icons/es/checkmark--filled/24";
 	styleUrl: "./card.component.scss",
 })
 export class CardComponent {
+	@Input() title: string = "";
+	@Input() subtitle: string = "";
+	@Input() iconStatus: "warning" | "success" | "" = "";
+	@Input() amount: string = "";
+	@Input() shortDescription: string = "";
+	@Input() amountAditional: string = "";
+	@Input() iconAmount: "up" | "down" | "" = "";
+
 	constructor(protected iconService: IconService) {}
 
 	ngOnInit(): void {
