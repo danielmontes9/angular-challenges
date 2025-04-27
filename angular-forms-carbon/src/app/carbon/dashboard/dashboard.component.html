@@ -41,4 +41,17 @@
   </div>
 </div>
 
+<div class="tabs-container">
+  <cds-tabs [type]="'contained'">
+    <cds-tab [heading]="'Orders'" [tabContent]="orders"></cds-tab>
+    <cds-tab [heading]="'Tab Label'">Tab Content</cds-tab>
+    <cds-tab [heading]="'Tab Label'">Tab Content</cds-tab>
+    <cds-tab [heading]="'Tab Label'">Tab Content</cds-tab>
+  </cds-tabs>
+
+  <ng-template #orders>
+    Tab Content
+  </ng-template>
+</div>
+
 

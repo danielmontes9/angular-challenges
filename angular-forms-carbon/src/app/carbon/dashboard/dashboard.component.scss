@@ -29,6 +29,10 @@
 	margin: 1rem;
 }
 
+.tabs-container {
+	padding: 1rem;
+}
+
 @media screen and (min-width: 768px) {
 	.grid-container {
 		grid-template-columns: repeat(2, 1fr);

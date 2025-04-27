@@ -10,6 +10,7 @@ import {
 	DialogModule,
 	IconModule,
 	SelectModule,
+	TabsModule,
 	TilesModule,
 	TooltipModule,
 } from "carbon-components-angular";
@@ -26,6 +27,7 @@ import {
 		DialogModule,
 		BreadcrumbModule,
 		SelectModule,
+		TabsModule,
 	],
 })
 export class CarbonModule {}
