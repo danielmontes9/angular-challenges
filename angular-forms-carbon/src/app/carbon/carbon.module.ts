@@ -7,9 +7,12 @@ import { CardComponent } from "./dashboard/components/card/card.component";
 import {
 	BreadcrumbModule,
 	ButtonModule,
+	CheckboxModule,
 	DialogModule,
 	IconModule,
 	SelectModule,
+	Tab,
+	TableModule,
 	TabsModule,
 	TilesModule,
 	TooltipModule,
@@ -28,6 +31,8 @@ import {
 		BreadcrumbModule,
 		SelectModule,
 		TabsModule,
+		TableModule,
+		CheckboxModule,
 	],
 })
 export class CarbonModule {}
