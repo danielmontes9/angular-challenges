@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { CarbonRoutingModule } from "./carbon-routing.module";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { CardComponent } from "./dashboard/components/card/card.component";
+import { TableOrdersComponent } from "./dashboard/components/table-orders/table-orders.component";
 import {
 	BreadcrumbModule,
 	ButtonModule,
@@ -11,7 +12,6 @@ import {
 	DialogModule,
 	IconModule,
 	SelectModule,
-	Tab,
 	TableModule,
 	TabsModule,
 	TilesModule,
@@ -19,7 +19,7 @@ import {
 } from "carbon-components-angular";
 
 @NgModule({
-	declarations: [DashboardComponent, CardComponent],
+	declarations: [DashboardComponent, CardComponent, TableOrdersComponent],
 	imports: [
 		CommonModule,
 		CarbonRoutingModule,
