@@ -23,7 +23,7 @@
       <svg *ngIf="currentTheme ==  'white'" ibmIcon="awake" size="20"></svg>
       <svg *ngIf="currentTheme ==  'g100'" ibmIcon="asleep" size="20"></svg>
     </ibm-header-action>
-    <ibm-header-action title="action">
+    <ibm-header-action title="action" (selected)="openModalInfo()">
       <svg ibmIcon="help" size="20"></svg>
     </ibm-header-action>
   </ibm-header-global>

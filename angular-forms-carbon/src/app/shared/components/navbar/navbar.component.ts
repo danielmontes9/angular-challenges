@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { IconService } from "carbon-components-angular";
+import { Component, Input } from "@angular/core";
+import { IconService, ModalService } from "carbon-components-angular";
 import { ThemeService } from "../../../carbon/core/services/theme.service";
 import { LocalstorageService } from "../../../carbon/core/services/localstorage.service";
 
@@ -9,6 +9,7 @@ import Switcher20 from "@carbon/icons/es/switcher/20";
 import Awake20 from "@carbon/icons/es/awake/20";
 import Asleep20 from "@carbon/icons/es/asleep/20";
 import Help20 from "@carbon/icons/es/help/20";
+import { SampleModalComponent } from "../sample-modal/sample-modal.component";
 
 @Component({
 	selector: "app-navbar",
@@ -17,11 +18,16 @@ import Help20 from "@carbon/icons/es/help/20";
 	styleUrl: "./navbar.component.scss",
 })
 export class NavbarComponent {
+	@Input() modalText = "Hello, World";
+	@Input() size = "md";
+	@Input() showCloseButton = true;
+
 	currentTheme: "white" | "g10" | "g90" | "g100" = "white";
 
 	constructor(
 		private themeService: ThemeService,
 		protected iconService: IconService,
+		protected modalService: ModalService,
 		private _localStorageService: LocalstorageService,
 	) {
 		this.currentTheme = this._localStorageService.getTheme("theme") as
@@ -45,5 +51,16 @@ export class NavbarComponent {
 	toggleTheme(event: boolean): void {
 		event == true ? (this.currentTheme = "g100") : (this.currentTheme = "white");
 		this.themeService.toggleTheme(this.currentTheme);
+	}
+
+	openModalInfo(): void {
+		this.modalService.create({
+			component: SampleModalComponent,
+			inputs: {
+				modalText: this.modalText,
+				size: this.size,
+				showCloseButton: this.showCloseButton,
+			},
+		});
 	}
 }

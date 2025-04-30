@@ -6,12 +6,15 @@ import {
 	ThemeModule,
 	MenuButtonModule,
 	DropdownModule,
+	ModalModule,
+	PlaceholderModule,
 } from "carbon-components-angular";
 
 import { NavbarComponent } from "./components/navbar/navbar.component";
+import { SampleModalComponent } from "./components/sample-modal/sample-modal.component";
 
 @NgModule({
-	declarations: [NavbarComponent],
+	declarations: [NavbarComponent, SampleModalComponent],
 	imports: [
 		CommonModule,
 		ThemeModule,
@@ -19,7 +22,9 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 		IconModule,
 		MenuButtonModule,
 		DropdownModule,
+		ModalModule,
+		PlaceholderModule,
 	],
-	exports: [ThemeModule, NavbarComponent],
+	exports: [ThemeModule, NavbarComponent, SampleModalComponent],
 })
 export class SharedModule {}
