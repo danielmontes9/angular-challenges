@@ -17,7 +17,7 @@
   </div>
   <br>
   <p>
-    <span class="card__amount">{{ amount | number }}</span>
+    <span class="card__amount" [countUp]="amount"> 0 </span>
     <span class="card__text">{{ shortDescription }}</span>
   </p>
   <p class="card__text__small">

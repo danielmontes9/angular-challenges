@@ -17,12 +17,14 @@ import {
 	TilesModule,
 	TooltipModule,
 } from "carbon-components-angular";
+import { CountUpModule } from "ngx-countup";
 
 @NgModule({
 	declarations: [DashboardComponent, CardComponent, TableOrdersComponent],
 	imports: [
 		CommonModule,
 		CarbonRoutingModule,
+		CountUpModule,
 		ButtonModule,
 		IconModule,
 		TilesModule,

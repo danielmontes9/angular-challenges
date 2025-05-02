@@ -17,7 +17,7 @@ export class CardComponent {
 	@Input() title: string = "";
 	@Input() subtitle: string = "";
 	@Input() iconStatus: "warning" | "success" | "" = "";
-	@Input() amount: string = "";
+	@Input() amount: number = 0;
 	@Input() shortDescription: string = "";
 	@Input() amountAditional: string = "";
 	@Input() iconAmount: "up" | "down" | "" = "";
