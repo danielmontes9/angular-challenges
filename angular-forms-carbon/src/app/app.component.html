@@ -1,5 +1,9 @@
-<app-navbar></app-navbar>
-<br><br><br>
-<main [cdsTheme]="currentTheme">
-  <router-outlet />
-</main>
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div *ngIf="!isLoading">
+  <app-navbar></app-navbar>
+  <br><br><br>
+  <main [cdsTheme]="currentTheme">
+    <router-outlet />
+  </main>
+</div>
