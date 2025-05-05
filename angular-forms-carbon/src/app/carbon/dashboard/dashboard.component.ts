@@ -4,6 +4,7 @@ import { IconService } from "carbon-components-angular";
 import Settings16 from "@carbon/icons/es/settings/16";
 import DocumentDownload16 from "@carbon/icons/es/document--download/16";
 import html2canvas from "html2canvas";
+import { LoaderService } from "../core/services/loader.service";
 
 @Component({
 	selector: "app-dashboard",
@@ -53,7 +54,10 @@ export class DashboardComponent {
 		},
 	];
 
-	constructor(protected iconService: IconService) {}
+	constructor(
+		protected iconService: IconService,
+		private _loaderService: LoaderService,
+	) {}
 
 	ngOnInit(): void {
 		this.iconService.registerAll([Settings16, DocumentDownload16]);
@@ -69,5 +73,12 @@ export class DashboardComponent {
 			link.download = "screenshot-my-dashboard.jpeg";
 			link.click();
 		});
+	}
+
+	onSelectChanged(event: string): void {
+		this._loaderService.setLoading(true);
+		setTimeout(() => {
+			this._loaderService.setLoading(false);
+		}, 3000);
 	}
 }

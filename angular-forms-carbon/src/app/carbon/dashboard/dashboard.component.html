@@ -11,10 +11,10 @@
   </div>
 
   <div class="header__settings">
-    <cds-select>
-      <option value="option1">Last week</option>
-      <option value="option2">Last month</option>
-      <option value="option3">Last year</option>
+    <cds-select (valueChange)="onSelectChanged($event)">
+      <option value="week">Last week</option>
+      <option value="month">Last month</option>
+      <option value="year">Last year</option>
     </cds-select>
     <div class="header__settings__buttons">
       <cds-icon-button [kind]="'ghost'" (click)="takeScreenshot()">
