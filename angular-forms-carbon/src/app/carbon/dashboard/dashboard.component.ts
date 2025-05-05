@@ -1,8 +1,9 @@
-import { Component, Input } from "@angular/core";
+import { Component, ElementRef, Input, ViewChild } from "@angular/core";
 import { IconService } from "carbon-components-angular";
 
 import Settings16 from "@carbon/icons/es/settings/16";
 import DocumentDownload16 from "@carbon/icons/es/document--download/16";
+import html2canvas from "html2canvas";
 
 @Component({
 	selector: "app-dashboard",
@@ -11,6 +12,8 @@ import DocumentDownload16 from "@carbon/icons/es/document--download/16";
 	styleUrl: "./dashboard.component.scss",
 })
 export class DashboardComponent {
+	@ViewChild("screenshotTarget") target!: ElementRef;
+
 	cards: any[] = [
 		{
 			title: "Supply below safety stock",
@@ -54,5 +57,17 @@ export class DashboardComponent {
 
 	ngOnInit(): void {
 		this.iconService.registerAll([Settings16, DocumentDownload16]);
+	}
+
+	takeScreenshot(): void {
+		html2canvas(this.target.nativeElement).then((canvas) => {
+			const image = canvas.toDataURL("image/jpeg", 1.0);
+
+			// Download the image
+			const link = document.createElement("a");
+			link.href = image;
+			link.download = "screenshot-my-dashboard.jpeg";
+			link.click();
+		});
 	}
 }
