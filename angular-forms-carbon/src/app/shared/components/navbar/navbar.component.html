@@ -4,12 +4,17 @@
   <ibm-header-navigation ariaLabel="Carbon Tutorial Angular">
     <ibm-header-item href="https://github.com/carbon-design-system/carbon-components-angular">Reference</ibm-header-item>
 
-    <cds-menu-button [kind]="'ghost'" [label]="'Menu 1'">
-      <!-- <cds-menu-item label="First action with a long label description"></cds-menu-item> -->
-    </cds-menu-button>
-    <cds-menu-button [kind]="'ghost'" [label]="'Menu 2'">
-      <!-- <cds-menu-item label="First action with a long label description"></cds-menu-item> -->
-    </cds-menu-button>
+    <cds-header-menu title="Menu 1">
+      <cds-header-item>Link 1</cds-header-item>
+      <cds-header-item>Link 2</cds-header-item>
+      <cds-header-item>Link 3</cds-header-item>
+    </cds-header-menu>
+
+    <cds-header-menu title="Menu 2">
+      <cds-header-item>Sub menu item 1</cds-header-item>
+      <cds-header-item>Sub menu item 2</cds-header-item>
+      <cds-header-item>Sub menu item 3</cds-header-item>
+    </cds-header-menu>
   </ibm-header-navigation>
 
   <ibm-header-global>

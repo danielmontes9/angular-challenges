@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import {
 	IconModule,
@@ -9,6 +9,7 @@ import {
 	ModalModule,
 	PlaceholderModule,
 	LoadingModule,
+	ButtonModule,
 } from "carbon-components-angular";
 
 import { NavbarComponent } from "./components/navbar/navbar.component";
@@ -21,6 +22,7 @@ import { LoaderComponent } from "./components/loader/loader.component";
 		CommonModule,
 		ThemeModule,
 		UIShellModule,
+		ButtonModule,
 		IconModule,
 		MenuButtonModule,
 		DropdownModule,
@@ -29,5 +31,6 @@ import { LoaderComponent } from "./components/loader/loader.component";
 		LoadingModule,
 	],
 	exports: [ThemeModule, NavbarComponent, SampleModalComponent, LoaderComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedModule {}
