@@ -1,0 +1,16 @@
+{
+	"devDependencies": {
+		"@commitlint/config-conventional": "^19.6.0",
+		"commitlint": "^19.6.0",
+		"conventional-changelog-cli": "^5.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.2.11",
+		"prettier": "^3.4.2",
+		"prettier-plugin-organize-attributes": "^1.0.0"
+	},
+	"scripts": {
+		"prepare": "husky",
+		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+	},
+	"version": "0.0.1"
+}

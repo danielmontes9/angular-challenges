@@ -1,0 +1,60 @@
+<div class="header-container">
+  <div class="header-content">
+    <cds-breadcrumb>
+      <cds-breadcrumb-item href="/">
+          Home
+      </cds-breadcrumb-item>
+    </cds-breadcrumb>
+
+    <h1 class="title">Dashboard</h1>
+    <small class="subtitle">Welcome to the Dashboard</small>
+  </div>
+
+  <div class="header__settings">
+    <cds-select (valueChange)="onSelectChanged($event)">
+      <option value="week">Last week</option>
+      <option value="month">Last month</option>
+      <option value="year">Last year</option>
+    </cds-select>
+    <div class="header__settings__buttons">
+      <cds-icon-button [kind]="'ghost'" (click)="takeScreenshot()">
+        <svg ibmIcon="document--download" size="16"></svg>
+      </cds-icon-button>
+      <cds-icon-button [kind]="'ghost'">
+        <svg ibmIcon="settings" size="16"></svg>
+      </cds-icon-button>
+    </div>
+  </div>
+</div>
+
+<div #screenshotTarget class="screenshot">
+  <div  class="grid-container">
+    <div class="grid-item" *ngFor="let card of cards">
+      <app-card
+        [title]="card.title"
+        [subtitle]="card.subtitle"
+        [amount]="card.amount"
+        [shortDescription]="card.shortDescription"
+        [amountAditional]="card.amountAditional"
+        [iconStatus]="card.iconStatus"
+        [iconAmount]="card.iconAmount"
+      ></app-card>
+    </div>
+  </div>
+
+  <div class="tabs-container">
+    <cds-tabs [type]="'contained'">
+      <cds-tab [heading]="'Orders'" [tabContent]="orders"></cds-tab>
+      <cds-tab [heading]="'Tab Label'">Tab Content</cds-tab>
+      <cds-tab [heading]="'Tab Label'">Tab Content</cds-tab>
+      <cds-tab [heading]="'Tab Label'">Tab Content</cds-tab>
+    </cds-tabs>
+
+    <ng-template #orders>
+      <app-table-orders></app-table-orders>
+    </ng-template>
+  </div>
+
+</div>
+
+

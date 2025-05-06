@@ -1,0 +1,22 @@
+<cds-modal [size]="size" [open]="open" (overlaySelected)="closeModal()">
+	<cds-modal-header [showCloseButton]="showCloseButton" (closeSelect)="closeModal()">
+		<h2 cdsModalHeaderLabel>Label</h2>
+		<h3 cdsModalHeaderHeading>Modal</h3>
+	</cds-modal-header>
+	<section cdsModalContent>
+		<h1>Sample modal works.</h1>
+		<p cdsModalContentText>{{ modalText }}</p>
+	</section>
+	<cds-modal-footer>
+		<button (click)="showSecondaryModal()" class="cds--btn cds--btn--secondary">
+			Show secondary modal
+		</button>
+		<button
+			(click)="closeModal()"
+			class="cds--btn cds--btn--primary"
+			modal-primary-focus
+		>
+			Close
+		</button>
+	</cds-modal-footer>
+</cds-modal>

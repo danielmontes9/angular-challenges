@@ -1,0 +1,29 @@
+{
+	"printWidth": 85,
+	"tabWidth": 1,
+	"useTabs": true,
+	"semi": true,
+	"singleQuote": false,
+	"quoteProps": "as-needed",
+	"jsxSingleQuote": false,
+	"trailingComma": "all",
+	"bracketSpacing": true,
+	"bracketSameLine": false,
+	"arrowParens": "always",
+	"proseWrap": "preserve",
+	"htmlWhitespaceSensitivity": "css",
+	"endOfLine": "lf",
+	"embeddedLanguageFormatting": "auto",
+	"singleAttributePerLine": false,
+	"plugins": ["prettier-plugin-organize-attributes"],
+	"attributeGroups": [
+		"$ANGULAR_ELEMENT_REF",
+		"$ANGULAR_STRUCTURAL_DIRECTIVE",
+		"$ANGULAR_ANIMATION",
+		"$ANGULAR_ANIMATION_INPUT",
+		"$ANGULAR_TWO_WAY_BINDING",
+		"$ANGULAR_INPUT",
+		"$ANGULAR_OUTPUT",
+		"$CODE_GUIDE"
+	]
+}
