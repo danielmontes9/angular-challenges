@@ -9,6 +9,7 @@ import {
 
 import Add16 from "@carbon/icons/es/add/16";
 import Filter16 from "@carbon/icons/es/filter/16";
+import Search32 from "@carbon/icons/es/search/32";
 
 @Component({
 	selector: "app-table-orders",
@@ -27,6 +28,7 @@ export class TableOrdersComponent {
 	@Input() skeleton = false;
 
 	model = new TableModel();
+	hasResults = true;
 	displayedCountries = ["US", "France", "Argentina", "Japan"];
 	searchValue = "";
 
@@ -78,7 +80,7 @@ export class TableOrdersComponent {
 	constructor(protected iconService: IconService) {}
 
 	ngOnInit(): void {
-		this.iconService.registerAll([Add16, Filter16]);
+		this.iconService.registerAll([Add16, Filter16, Search32]);
 
 		this.model.header = [
 			new TableHeaderItem({
@@ -96,19 +98,21 @@ export class TableOrdersComponent {
 		];
 
 		this.model.data = this.dataset;
-
-		this.model.isRowFiltered = (index: number) => {
-			const nodeName = this.model.row(index)[1].data;
-			const countryName = this.model.row(index)[3].data;
-			return (
-				!nodeName.toLowerCase().includes(this.searchValue.toLowerCase()) ||
-				!this.displayedCountries.includes(countryName)
-			);
-		};
 	}
 
-	filterNodeNames(searchString: string) {
+	filterOrderNames(searchString: string) {
+		const filtered = this.dataset.filter((item) =>
+			item[1].data.toLowerCase().includes(searchString.toLowerCase()),
+		);
+
+		this.model.data = filtered;
+		this.hasResults = filtered.length > 0;
+	}
+
+	resetData(searchString: string) {
 		this.searchValue = searchString;
+		this.model.data = this.dataset;
+		this.hasResults = true;
 	}
 
 	filterCountries(countryName: string, checked: boolean) {

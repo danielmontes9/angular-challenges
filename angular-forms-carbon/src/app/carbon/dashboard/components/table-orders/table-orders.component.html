@@ -10,8 +10,8 @@
     <cds-table-toolbar-content>
       <cds-table-toolbar-search
         [expandable]="true"
-        (valueChange)="filterNodeNames($event)"
-        (clear)="searchValue = ''">
+        (valueChange)="filterOrderNames($event)"
+        (clear)="resetData($event)">
       </cds-table-toolbar-search>
       <button
         cdsButton="ghost"
@@ -39,6 +39,12 @@
     [isDataGrid]="isDataGrid">
     <ng-content></ng-content>
   </cds-table>
+
+
+  <div  *ngIf="!hasResults" class="no-data bx--data-table--empty">
+    <svg cdsIcon="search" size="32"></svg>
+    <h4>No results found</h4>
+  </div>
 </cds-table-container>
 
 <ng-template #templateRef>
