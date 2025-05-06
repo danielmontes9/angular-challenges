@@ -18,18 +18,35 @@
   </ibm-header-navigation>
 
   <ibm-header-global>
-    <ibm-header-action title="action">
+    <ibm-header-action title="action" #notificationAction ariaLabel="Notifications">
       <svg ibmIcon="notification" size="20"></svg>
     </ibm-header-action>
-    <ibm-header-action title="action">
+    <ibm-header-action title="action" #profileAction ariaLabel="Profile">
       <svg ibmIcon="user--avatar" size="20"></svg>
     </ibm-header-action>
-    <ibm-header-action title="action" (selected)="toggleTheme($event)">
+    <ibm-header-action title="action" (selected)="toggleTheme($event)" ariaLabel="Theme">
       <svg *ngIf="currentTheme ==  'white'" ibmIcon="awake" size="20"></svg>
       <svg *ngIf="currentTheme ==  'g100'" ibmIcon="asleep" size="20"></svg>
     </ibm-header-action>
-    <ibm-header-action title="action" (selected)="openModalInfo()">
+    <ibm-header-action title="action" (selected)="openModalInfo()" ariaLabel="Help!">
       <svg ibmIcon="help" size="20"></svg>
     </ibm-header-action>
   </ibm-header-global>
 </ibm-header>
+
+<cds-panel [expanded]="notificationAction.active">
+  <div class="notification-panel">
+    <svg ibmIcon="chat-bot" size="32"></svg>
+    <h5>You don't have any notifications</h5>
+  </div>
+</cds-panel>
+
+
+<cds-panel [expanded]="profileAction.active">
+  <div class="profile-panel">
+    <svg ibmIcon="user--avatar" size="32"></svg>
+    <h3 class="fw-bold">Profile</h3>
+    <p class="fw-bold">Name:</p> <span>{{'Daniel Montes'}}</span>
+    <p class="fw-bold">Email:</p> <span>{{'danielmontes9@test.com'}}</span>
+  </div>
+</cds-panel>
