@@ -1,0 +1,27 @@
+{
+  "todo": {
+    "title": "LISTA DE TAREAS",
+    "task": "Tarea",
+    "add-task": "Agregar tarea",
+    "update-task": "Actualizar tarea",
+    "delete-task": "Eliminar tarea",
+    "delete-task-confirm": "¿Estás seguro de que deseas eliminar esta tarea?",
+    "delete-all-tasks-confirm": "¿Estás seguro de que deseas eliminar todas las tareas?",
+    "clean": "Limpiar Todo",
+    "pending": "Pendiente",
+    "add-success": "Tarea agregada con éxito",
+    "update-success": "Tarea actualizada con éxito",
+    "delete-success": "Tarea eliminada con éxito",
+    "delete-all-success": "Todas las tareas eliminadas con éxito",
+    "no-results": {
+      "title": "UPPS! Aún no tienes tareas registradas.",
+      "description": "Ingresa una tarea en la barra y después pulsa el botón +, para agregar una nueva tarea."
+    }
+  },
+  "shared": {
+    "not-found": {
+      "title": "Lo siento, la página que quieres visitar no existe.",
+      "back": "Regresar"
+    }
+  }
+}

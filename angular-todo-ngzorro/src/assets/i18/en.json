@@ -1,0 +1,27 @@
+{
+  "todo": {
+    "title": "TODO LIST",
+    "task": "Task",
+    "add-task": "Add task",
+    "update-task": "Update task",
+    "delete-task": "Delete task",
+    "delete-task-confirm": "Are you sure you want to delete this task?",
+    "delete-all-tasks-confirm": "Are you sure you want to delete all tasks?",
+    "clean": "Clean Todo",
+    "pending": "Pending",
+    "add-success": "Task added successfully",
+    "update-success": "Task updated successfully",
+    "delete-success": "Task deleted successfully",
+    "delete-all-success": "All tasks deleted successfully",
+    "no-results": {
+      "title": "UPPS! You don't have any tasks registered yet.",
+      "description": "Enter a task in the bar and then press the + button to add a new task."
+    }
+  },
+  "shared": {
+    "not-found": {
+      "title": "Sorry, the page you want to visit does not exist.",
+      "back": "Back"
+    }
+  }
+}
