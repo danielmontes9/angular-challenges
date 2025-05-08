@@ -15,7 +15,7 @@ import { LoaderService } from "./carbon/core/services/loader.service";
 export class AppComponent {
 	currentTheme: "white" | "g10" | "g90" | "g100" = "white";
 	isLoading = true;
-	title = "angular-forms-carbon";
+	title = "angular-dashboard-carbon";
 
 	constructor(
 		private _themeService: ThemeService,

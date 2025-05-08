@@ -14,10 +14,10 @@ describe("AppComponent", () => {
 		expect(app).toBeTruthy();
 	});
 
-	it(`should have the 'angular-forms-carbon' title`, () => {
+	it(`should have the 'angular-dashboard-carbon' title`, () => {
 		const fixture = TestBed.createComponent(AppComponent);
 		const app = fixture.componentInstance;
-		expect(app.title).toEqual("angular-forms-carbon");
+		expect(app.title).toEqual("angular-dashboard-carbon");
 	});
 
 	it("should render title", () => {
@@ -25,7 +25,7 @@ describe("AppComponent", () => {
 		fixture.detectChanges();
 		const compiled = fixture.nativeElement as HTMLElement;
 		expect(compiled.querySelector("h1")?.textContent).toContain(
-			"Hello, angular-forms-carbon",
+			"Hello, angular-dashboard-carbon",
 		);
 	});
 });
