@@ -18,6 +18,10 @@
 
 ## Overview
 
+### The challenge
+
+Create an simple counter app using Bulma as UI.
+
 ### Screenshot
 
 ![](./public/overview.png)
@@ -30,8 +34,8 @@
 
 ### Built with
 
-- Bulma 1.0.2
 - Mobile-first workflow
+- [Bulma 1.0.2](https://bulma.io/)
 - [Angular](https://v19.angular.dev/)
 
 ## Angular Documentation
