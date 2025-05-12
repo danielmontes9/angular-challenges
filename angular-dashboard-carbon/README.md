@@ -1,6 +1,46 @@
-# AngularFormsCarbon
+# Angular Dashboard Carbon
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Angular Documentation](#angular-documentation)
+  - [Development server](#development-server)
+  - [Code scaffolding](#code-scaffolding)
+  - [Building](#building)
+  - [Running unit tests](#running-unit-tests)
+  - [Running end-to-end tests](#running-end-to-end-tests)
+  - [Additional Resources](#additional-resources)
+
+## Overview
+
+### The Challenge
+
+Create a dashboard using Carbon Design as UI.
+
+### Screenshot
+
+![](./public/screenshot-dashboard-carbon.webp)
+
+### Links
+
+- Live Site URL: [Angular Dashboard Carbon]()
+
+## My process
+
+### Built with
+
+- Mobile-first workflow
+- [Carbon Design](https://carbondesignsystem.com/developing/angular-tutorial/overview/)
+- [Angular](https://v19.angular.dev/)
+
+## Angular Documentation
+
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 
 ## Development server
 
