@@ -1,26 +1,26 @@
 <section nz-row nzJustify="center" nzAlign="middle" class="min-height-contianer bg-gradient">
     <div nz-col nzSpan="22" nzSm="18" nzMd="16" nzLg="14" nzXl="12">
         <nz-card nzHoverable>
-            <h1 nz-typography>📝 Todo App</h1>
+            <h1 nz-typography>📝 {{ 'todo.title' | translate }}</h1>
 
             <form nz-form nz-row [nzGutter]="[8, 8]" nzJustify="space-between" nzAlign="middle" [nzLayout]="'inline'" [formGroup]="taskForm" (ngSubmit)="addTask()">
                 <div nz-col nzXs="24" nzMd="16">
                     <nz-form-control>
                         <nz-input-group nzPrefixIcon="reconciliation">
-                            <input formControlName="task" nz-input placeholder="Tarea" />
+                            <input formControlName="task" nz-input [placeholder]="'todo.task' | translate" />
                         </nz-input-group>
                     </nz-form-control>
                 </div>
 
                 <div nz-col nzXs="24" nzMd="8">
                     <nz-form-control>
-                        <button 
+                        <button
                             nz-button
-                            nzBlock 
-                            nzType="primary" 
+                            nzBlock
+                            nzType="primary"
                             [disabled]="addTaskControl.value == ''">
                             <i nz-icon nzType="plus" nzTheme="outline"></i>
-                            Agregar Tarea
+                            {{ 'todo.add-task' | translate }}
                         </button>
                     </nz-form-control>
                 </div>
@@ -29,11 +29,11 @@
 
             <div nz-row>
                 <div *ngIf="tasks.length == 0" nz-col nzSpan="24" nzAlign="middle">
-                    <nz-result 
-                        [nzIcon]="'info'" 
+                    <nz-result
+                        [nzIcon]="'info'"
                         [nzStatus]="'info'"
-                        [nzTitle]="'UPPS! Aún no tienes tareas registradas'"
-                        [nzSubTitle]="'Ingresa una tarea en la barra y después pulsa el botón +, para agregar una nueva tarea.'">
+                        [nzTitle]="'todo.no-results.title' | translate"
+                        [nzSubTitle]="'todo.no-results.description' | translate">
                     </nz-result>
                 </div>
 
@@ -47,24 +47,24 @@
                                 </button>
                                 <nz-modal
                                     [(nzVisible)]="isVisibleModal"
-                                    nzTitle="Actualizar Tarea"
+                                    [nzTitle]="'todo.update-task' | translate"
                                     nzCentered
                                     [nzOkDisabled]="titleTaskEditable ==''"
                                     (nzOnCancel)="cancelTaskChanges()"
                                     (nzOnOk)="saveTaskEdit()"
                                     >
                                     <ng-container *nzModalContent>
-                                        <input [(ngModel)]="titleTaskEditable" nz-input placeholder="Tarea" />
+                                        <input [(ngModel)]="titleTaskEditable" nz-input [placeholder]="'todo.task' | translate" />
                                     </ng-container>
                                 </nz-modal>
 
-                                <button *nzSpaceItem 
-                                        nz-button 
-                                        nzType="dashed" 
-                                        nzShape="circle" 
-                                        nzDanger 
+                                <button *nzSpaceItem
+                                        nz-button
+                                        nzType="dashed"
+                                        nzShape="circle"
+                                        nzDanger
                                         nz-popconfirm
-                                        nzPopconfirmTitle="¿Estás seguro de eliminar esta tarea?"
+                                        [nzPopconfirmTitle]="'todo.delete-task-confirm' | translate"
                                         (nzOnConfirm)="deleteTaskByUUID(task.uuid)"
                                         nzPopconfirmPlacement="top">
                                     <i nz-icon nzType="delete"></i>
@@ -79,23 +79,23 @@
 
             <div *ngIf="tasks.length > 0" nz-row [nzGutter]="[8, 8]" nzJustify="space-between" nzAlign="middle">
                 <div nz-col nzXs="24" nzMd="16" nzAlign="middle">
-                    Tienes <strong>{{ tasks.length }}</strong> 
-                    tarea{{ tasks.length > 1 ? 's' : '' }} 
-                    pendiente{{ tasks.length > 1 ? 's' : '' }}.
+                    <strong>{{ tasks.length }}</strong>
+                    {{ 'todo.task' | translate }} {{ tasks.length > 1 ? 's' : '' }}
+                    {{ 'todo.pending' | translate }} {{ tasks.length > 1 ? 's' : '' }}.
                 </div>
 
                 <div nz-col nzXs="24" nzMd="8">
-                    <button 
+                    <button
                         nz-button
-                        nzBlock 
-                        nzType="primary" 
+                        nzBlock
+                        nzType="primary"
                         nzDanger
                         nz-popconfirm
-                        nzPopconfirmTitle="¿Estás seguro de eliminar todas las tareas?"
+                        [nzPopconfirmTitle]="'todo.delete-all-task-confirm' | translate"
                         (nzOnConfirm)="cleanAllTasks()"
                         nzPopconfirmPlacement="bottom">
                         <i nz-icon nzType="clear" nzTheme="outline"></i>
-                        Limpiar Todo
+                        {{ 'todo.clean' | translate }}
                     </button>
                 </div>
             </div>

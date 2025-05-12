@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Task } from 'src/app/core/models/task.model';
 import { v4 as uuidv4 } from 'uuid';
@@ -17,7 +18,10 @@ export class TodoComponent implements OnInit {
   taskSelected!: Task;
   titleTaskEditable!: string;
 
-  constructor(private fb: FormBuilder, private nzMessage: NzMessageService) { }
+  constructor(
+    private fb: FormBuilder,
+    private nzMessage: NzMessageService,
+    private _translate: TranslateService) { }
 
   ngOnInit(): void {
     this.taskForm = this.fb.group({
@@ -37,7 +41,9 @@ export class TodoComponent implements OnInit {
     }
     this.tasks = [...this.tasks, newTask];
     this.taskForm.controls['task'].patchValue("");
-    this.nzMessage.create("success", `La tarea ha sido agregada correctamente.`);
+    this._translate.get('todo.add-success').subscribe((res: string) => {
+      this.nzMessage.create("success", res);
+    });
     this.saveTasksLocalStorage();
   }
 
@@ -53,7 +59,9 @@ export class TodoComponent implements OnInit {
     let index = this.tasks.findIndex(task => task.uuid === this.taskSelected.uuid);
     if(index !== 1) {
       this.tasks[index] = this.taskSelected;
-      this.nzMessage.create("success", `La tarea seleccionada ha sido actualizada correctamente.`);
+      this._translate.get('todo.update-success').subscribe((res: string) => {
+      this.nzMessage.create("success", res);
+    });
       this.saveTasksLocalStorage();
     }
   }
@@ -64,13 +72,17 @@ export class TodoComponent implements OnInit {
 
   deleteTaskByUUID(uuidSelected: string): void {
     this.tasks = this.tasks.filter(task => task.uuid != uuidSelected);
-    this.nzMessage.create("success", `La tarea seleccionada ha sido eliminada correctamente.`);
+    this._translate.get('todo.delete-success').subscribe((res: string) => {
+      this.nzMessage.create("success", res);
+    });
     this.saveTasksLocalStorage();
   }
 
   cleanAllTasks(): void {
     this.tasks = [];
-    this.nzMessage.create("success", `Todas las tareas ha sido eliminadas correctamente.`);
+    this._translate.get('todo.delete-all-success').subscribe((res: string) => {
+      this.nzMessage.create("success", res);
+    });
     this.saveTasksLocalStorage();
   }
 
