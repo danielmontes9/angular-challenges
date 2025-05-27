@@ -1,7 +1,7 @@
 <section nz-row nzJustify="center" nzAlign="middle" class="min-height-contianer">
-    <nz-result nzStatus="404" nzTitle="404" nzSubTitle="Lo siento, la página que quieres visitar no existe.">
+    <nz-result nzStatus="404" nzTitle="404" [nzSubTitle]="'shared.not-found.title' | translate">
         <div nz-result-extra>
-            <button nz-button nzType="primary" (click)="backHome()">Regresar</button>
+            <button nz-button nzType="primary" (click)="backHome()">{{ 'shared.not-found.back' | translate }}</button>
         </div>
     </nz-result>
 </section>

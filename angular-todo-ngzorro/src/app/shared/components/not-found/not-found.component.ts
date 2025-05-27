@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-not-found',
@@ -8,13 +9,15 @@ import { Router } from '@angular/router';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private _router: Router,
+    private _translate: TranslateService) {}
 
   ngOnInit(): void {
   }
 
   backHome(): void {
-    this.router.navigateByUrl('/');
+    this._router.navigateByUrl('/');
   }
 
 }

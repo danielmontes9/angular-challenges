@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { NZ_I18N, es_ES } from 'ng-zorro-antd/i18n';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
@@ -21,7 +21,13 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+// Function to load translation files
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, './assets/i18/', '.json');
+}
 
 const components: any[] = [];
 const modules: any[] = [
@@ -31,9 +37,9 @@ const modules: any[] = [
   FormsModule,
   ReactiveFormsModule,
 
-  NzTypographyModule, 
+  NzTypographyModule,
   NzGridModule,
-  NzSpaceModule, 
+  NzSpaceModule,
   NzIconModule,
   NzButtonModule,
   NzCardModule,
@@ -44,9 +50,17 @@ const modules: any[] = [
   NzListModule,
   NzPopconfirmModule,
   NzDividerModule,
-  NzModalModule
+  NzModalModule,
+
+  TranslateModule.forRoot({
+    loader: {
+      provide: TranslateLoader,
+      useFactory: HttpLoaderFactory,
+      deps: [HttpClient]
+    }
+  }),
 ];
-const providers: any = [ 
+const providers: any = [
   { provide: NZ_I18N, useValue: es_ES },
 ];
 
