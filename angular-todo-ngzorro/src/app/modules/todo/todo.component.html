@@ -80,8 +80,8 @@
             <div *ngIf="tasks.length > 0" nz-row [nzGutter]="[8, 8]" nzJustify="space-between" nzAlign="middle">
                 <div nz-col nzXs="24" nzMd="16" nzAlign="middle">
                     <strong>{{ tasks.length }}</strong>
-                    {{ 'todo.task' | translate }} {{ tasks.length > 1 ? 's' : '' }}
-                    {{ 'todo.pending' | translate }} {{ tasks.length > 1 ? 's' : '' }}.
+                    <span>{{ ' ' + ('todo.task' | translate) + (tasks.length > 1 ? 's' : '') }}</span>
+                    <span>{{ ' ' + ('todo.pending' | translate) + (tasks.length > 1 ? 's' : '') }}</span>
                 </div>
 
                 <div nz-col nzXs="24" nzMd="8">
@@ -91,7 +91,7 @@
                         nzType="primary"
                         nzDanger
                         nz-popconfirm
-                        [nzPopconfirmTitle]="'todo.delete-all-task-confirm' | translate"
+                        [nzPopconfirmTitle]="'todo.delete-all-tasks-confirm' | translate"
                         (nzOnConfirm)="cleanAllTasks()"
                         nzPopconfirmPlacement="bottom">
                         <i nz-icon nzType="clear" nzTheme="outline"></i>
