@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import { NZ_I18N, es_ES } from 'ng-zorro-antd/i18n';
+import { NZ_I18N, en_US, es_ES } from 'ng-zorro-antd/i18n';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
@@ -61,7 +61,7 @@ const modules: any[] = [
   }),
 ];
 const providers: any = [
-  { provide: NZ_I18N, useValue: es_ES },
+  { provide: NZ_I18N, useValue: en_US },
 ];
 
 

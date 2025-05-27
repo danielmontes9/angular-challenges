@@ -24,7 +24,7 @@ Create a todo list app using NG Zorro as UI.
 
 ### Screenshot
 
-![](./src/assets/imgs/angular-todo-ngzorro.webp)
+![](./src/assets/imgs/angular-todo-ngzorro.png)
 
 ### Links
 
