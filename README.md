@@ -4,6 +4,20 @@ This is a **monorepo** containing multiple Angular projects, each created using 
 
 Explore the code to see how different versions and UIs are implemented.
 
+## 📂 Projects
+Each folder inside the repo is a standalone Angular project. Examples:
+
+- [angular-dashboard-carbon](https://github.com/danielmontes9/angular-challenges/tree/main/angular-dashboard-carbon)
+
+- [angular-simple-counter](https://github.com/danielmontes9/angular-challenges/tree/main/angular-simple-counter)
+
+- [angular-todo-ngzorro](https://github.com/danielmontes9/angular-challenges/tree/main/angular-todo-ngzorro)
+
+You can explore each folder’s README.md for more details.
+
+### Screenshot
+![](./src/images/angular-challenges-screenshot.png)
+
 
 ## 🛠️ Getting Started
 
@@ -14,7 +28,7 @@ Explore the code to see how different versions and UIs are implemented.
   cd angular-challenges
 ```
 
-### Run a project
+### 🚀 Run a project
 1. Navigate to one of the project folders:
 
 ```bash
@@ -32,18 +46,6 @@ Explore the code to see how different versions and UIs are implemented.
   npx ng serve
 ```
 Then open http://localhost:4200 in your browser.
-
-## 📂 Projects
-Each folder inside the repo is a standalone Angular project. Examples:
-
-- angular-dashboard-carbon
-
-- angular-simple-counter
-
-- angular-todo-ngzorro
-
-You can explore each folder’s README.md for more details.
-
 
 
 ## Author
